@@ -1,0 +1,30 @@
+{
+	"manifest_version" : 2,
+	"name"             : "ニコニコIDサーチ",
+	"version"          : "0.1.0",
+	"description"      : "検索にIDを入れるとその作品のページに移動させる拡張機能",
+	"author"           : "istallia",
+	"icons" : {
+		"32"  : "icon_32.png",
+		"48"  : "icon_48.png",
+		"128" : "icon_128.png"
+	},
+	"content_scripts": [{
+			{
+				"matches": ["http://commons.nicovideo.jp/material/*", "https://commons.nicovideo.jp/material/*"],
+				"run_at" : "document_start",
+				"js": ["content-script.js"]
+			}
+		}],
+	"background": {
+		"scripts": [
+			"background-rename.js"
+		],
+		"persistent": true
+	},
+	"permissions" : [
+		"https://*.nicovideo.jp",
+		"webRequest",
+		"webRequestBlocking"
+	]
+}
