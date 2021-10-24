@@ -19,12 +19,12 @@
 		"https://www.nicovideo.jp/search/*",
 		"https://www.nicovideo.jp/tag/*",
 		"https://seiga.nicovideo.jp/search/*",
-		"https://live.nicovideo.jp/search",
+		"https://live.nicovideo.jp/search*",
 		"https://commons.nicovideo.jp/search/keyword/*",
-		"https://3d.nicovideo.jp/search",
+		"https://3d.nicovideo.jp/search*",
 		"https://com.nicovideo.jp/search/*",
 		"https://game.nicovideo.jp/atsumaru/search/word/*",
-		"https://q.nicovideo.jp/search",
+		"https://q.nicovideo.jp/search*",
 		"webRequest",
 		"webRequestBlocking"
 	]

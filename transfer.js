@@ -19,6 +19,7 @@ const NICONICO_URLS = {
 browser.webRequest.onBeforeRequest.addListener(details => {
 	/* IDを検出 */
 	let work_id = details.url.match(/\b(sm|so|lv|nc|td|co|gm|nq)\d{1,12}/);
+	console.log(details.url, work_id);
 	if (work_id){
 		work_id = work_id[0];
 	} else {
@@ -32,11 +33,11 @@ browser.webRequest.onBeforeRequest.addListener(details => {
 		"https://www.nicovideo.jp/search/*",
 		"https://www.nicovideo.jp/tag/*",
 		"https://seiga.nicovideo.jp/search/*",
-		"https://live.nicovideo.jp/search",
+		"https://live.nicovideo.jp/search*",
 		"https://commons.nicovideo.jp/search/keyword/*",
-		"https://3d.nicovideo.jp/search",
+		"https://3d.nicovideo.jp/search*",
 		"https://com.nicovideo.jp/search/*",
 		"https://game.nicovideo.jp/atsumaru/search/word/*",
-		"https://q.nicovideo.jp/search"
+		"https://q.nicovideo.jp/search*"
 	]
 }, ['blocking']);
