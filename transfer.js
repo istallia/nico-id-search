@@ -17,8 +17,16 @@ const NICONICO_URLS = {
 
 /* --- 転送を行う --- */
 browser.webRequest.onBeforeRequest.addListener(details => {
+	/* IDを検出 */
 	let work_id = details.url.match(/\b(sm|so|lv|nc|td|co|gm|nq)\d{1,12}/);
-	if (work_id) work_id = work_id[0];
+	if (work_id){
+		work_id = work_id[0];
+	} else {
+		return {};
+	}
+	/* 対応したページに飛ばす */
+	const url = NICONICO_URLS[work_id.slice(0,2)].replace('%id%', work_id);
+	return {redirectUrl : 'https://'+url};
 }, {
 	urls : [
 		"https://www.nicovideo.jp/search/*",
